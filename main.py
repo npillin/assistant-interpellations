@@ -55,7 +55,7 @@ os.environ['OPENAI_API_KEY'] = st.secrets["apikey"]
 ##############
 
 # Questions field
-quest_label = "Questions posées dans le cadre de l'interpellation :"
+quest_label = "Questions posées dans le cadre de l'intervention :"
 
 # Info field
 infos_label = "Informations permettant de répondre aux questions :"
@@ -74,6 +74,7 @@ Le document que vous rédigez est une réponse du Conseil d'Etat.
 Vous répondez au Grand Conseil et représentez le Conseil d'Etat.
 Dans le document, vous répondez aux questions posées par le Grand Conseil, qui sont listée ci-dessous.
 Pour répondre à ces questions, vous vous basez sur les informations fournies ci-dessous.
+Vous utilisez un ton formel.
 Rédigez un texte de {n_words} mots environ en utilisant la structure fournie.
        
 Questions : {questions}
@@ -108,7 +109,7 @@ def gen_text(): # Returns the generated text
 # App framework #
 #################
 
-st.title("Assistant Interpellations+")
+st.title("Assistant Interventions+")
 
 st.subheader("Questions et informations pertinentes pour y répondre")
 questions = st.text_area(label=quest_label, height=300)
